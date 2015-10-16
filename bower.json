@@ -1,23 +1,17 @@
 {
-  "name": "mean-events",
+  "name": "mean-events-app",
   "version": "0.0.0",
-  "homepage": "http://events-spookmx.c9.io/",
+  "homepage": "https://github.com/spookmx/mean-events-app",
   "authors": [
     "spookmx <spookmx@gmail.com>"
   ],
-  "description": "Event management using MEAN and Foundation",
+  "description": "mean app",
   "main": "server.js",
   "moduleType": [
     "node"
   ],
-  "keywords": [
-    "mongoose",
-    "express",
-    "angular",
-    "node",
-    "foundation"
-  ],
   "license": "MIT",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -26,6 +20,11 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.7"
+    "angular-animate": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular": "~1.4.7",
+    "foundation-datepicker": "~1.4.0",
+    "foundation": "~5.5.3",
+    "foundation-icon-fonts": "*"
   }
 }
