@@ -1,0 +1,41 @@
+<div class="spinner-wrapper" ng-show="loading">
+    <div class="spinner"></div>
+</div>
+<div class="container">
+    <div class="row">
+        <ul class="breadcrumbs">
+            <li class="current"><i class="fi-home"></i> Home</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Current Events</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-8 columns">
+            <p>Here is a list of the currently published events, you can add a new event by clicking on the big blue button and edit the properties of an event by clicking on the small blue button next to the event. Feel free to remove a specific event by clicking on the red button.</p>
+        </div>
+        <div class="large-4 columns">
+            <p class="text-right">
+                <a href="#/event/add" class="button radius">Add Event</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th width="200">Event</th>
+                    <th>Description</th>
+                    <th width="150"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="event in events" ng-event ng-model="event" class="list-item">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

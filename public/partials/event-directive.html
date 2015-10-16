@@ -1,0 +1,28 @@
+<tr>
+    <td>
+        <h6>{{ event.title }}</h6>
+        <br>
+        <span class="radius secondary label">From: {{ event.dateStart | date:'yy-MM-dd' }}</span>
+        <br>
+        <span class="radius secondary label">To: {{ event.dateEnd | date:'yy-MM-dd' }}</span>
+    </td>
+    <td>{{ event.description }}</td>
+    <td>
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <a href="#/event/edit/{{ event._id }}" class="button round tiny info"><i class="fi-pencil fi-medium"></i></a>
+            </div>
+            <div class="small-12 medium-6 columns">
+                <a ng-click="deleteEvent(event._id)" class="button round tiny alert"><i class="fi-trash fi-medium"></i></a>
+            </div>
+        </div>
+        <div class="row show-for-medium-up">
+            <div class="medium-12 columns">
+                <small>Created: {{ event.dateCreated | date:'yy-MM-dd' }}</small>
+            </div>
+            <div class="medium-12 columns">
+                <small>Updated: {{ event.dateModified | date:'yy-MM-dd' }}</small>
+            </div>
+        </div>
+    </td>
+</tr>

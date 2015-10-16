@@ -1,0 +1,96 @@
+<div class="spinner-wrapper" ng-show="loading">
+    <div class="spinner"></div>
+</div>
+<div class="container">
+    <div class="row">
+        <ul class="breadcrumbs">
+            <li><a href="#/"><i class="fi-home"></i> Home</a></li>
+            <li class="current">Add Event</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Add Event</h2>
+        </div>
+    </div>
+
+    <div class="row" ng-show="success">
+        <div data-alert class="alert-box info radius">
+            Your event has been added to the list. <a href="#/">Check it out!</a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="large-12 columns">
+            <form name="eventForm">
+                <div class="row">
+                    <div class="large-4 columns">
+                        <label>Title
+                            <input required type="text" placeholder="Enter a title" ng-model="formData.title" />
+                        </label>
+                    </div>
+                    <div class="large-4 columns">
+                        <label>Category
+                            <select required ng-model="formData.category">
+                                <option value="" disabled>--Select one--</option>
+                                <option value="general">General</option>
+                                <option value="private">Private</option>
+                                <option value="congress">Congress</option>
+                                <option value="concert">Concert</option>
+                                <option value="concert">Hackathon</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="large-4 columns">
+                        <span>Featured</span>
+                        <div class="switch small">
+                            <input id="featuredSwitch" ng-model="formData.featured" type="checkbox">
+                            <label for="featuredSwitch"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Description
+                            <textarea required placeholder="Enter a description" ng-model="formData.description"></textarea>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="small-3 large-4 columns">
+                                <span class="prefix"><i class="fi-calendar fi-medium"></i> Start</span>
+                            </div>
+                            <div class="small-9 large-8 columns">
+                                <input type="date" id="dateStart" ng-change="dateStartChange()" name="dateStart" ng-model="formData.dateStart" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="small-3 large-4 columns">
+                                <span class="prefix"><i class="fi-calendar fi-medium"></i> End</span>
+                            </div>
+                            <div class="small-9 large-8 columns">
+                                <input type="date" id="dateEnd" ng-change="dateEndChange()" name="dateEnd" ng-model="formData.dateEnd" required min="{{formData.dateStart | date:'yyyy-MM-dd'}}" />
+<!--                                Start date is the master, ergo date will be invalid-->
+                                <small class="error" ng-show="!eventForm.dateEnd.$valid && eventForm.dateEnd.$touched"> The end date should be after start date</small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns text-center">
+                <button ng-disabled="eventForm.$invalid" href="#/event/add" class="button radius" ng-click="createEvent()"><i class="fi-page-add"></i> Add</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</div>

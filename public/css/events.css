@@ -1,0 +1,71 @@
+.fi-big {
+    font-size: 36px;
+}
+
+.fi-medium {
+    font-size: 18px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    left: 0;
+    margin: 200px auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+.list-item.ng-enter,
+.list-item.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.list-item.ng-enter,
+.list-item.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.list-item.ng-leave,
+.list-item.ng-enter.ng-enter-active {
+  opacity:1;
+ 
+}
+
+.spinner-wrapper{
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1004;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+@-webkit-keyframes sk-rotateplane {
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "mean-events",
+  "version": "0.0.0",
+  "homepage": "http://events-spookmx.c9.io/",
+  "authors": [
+    "spookmx <spookmx@gmail.com>"
+  ],
+  "description": "Event management using MEAN and Foundation",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "mongoose",
+    "express",
+    "angular",
+    "node",
+    "foundation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7"
+  }
+}
