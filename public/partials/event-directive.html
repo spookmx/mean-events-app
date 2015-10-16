@@ -1,6 +1,6 @@
 <tr>
     <td>
-        <h6>{{ event.title }}</h6>
+        <h6><a href="#/event/{{ event._id }}">{{ event.title }}</a></h6>
         <br>
         <span class="radius secondary label">From: {{ event.dateStart | date:'yy-MM-dd' }}</span>
         <br>
@@ -12,7 +12,7 @@
             <div class="small-12 medium-6 columns">
                 <a href="#/event/edit/{{ event._id }}" class="button round tiny info"><i class="fi-pencil fi-medium"></i></a>
             </div>
-            <div class="small-12 medium-6 columns">
+            <div class="small-12 medium-6 columns" ng-show="!view">
                 <a ng-click="deleteEvent(event._id)" class="button round tiny alert"><i class="fi-trash fi-medium"></i></a>
             </div>
         </div>

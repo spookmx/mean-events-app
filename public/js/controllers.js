@@ -1,4 +1,5 @@
 var eventController = angular.module('eventController', []);
+
 eventController.controller('homeController', ['$scope', '$http', 'Events', function ($scope, $http, Events) {
     $scope.loading = true;
     $scope.$on('$routeChangeStart', function (event) {
@@ -105,5 +106,27 @@ eventController.controller('eventEditController', ['$scope', '$routeParams', '$h
                 $scope.success = true;
             });
     };
+
+	}]);
+
+
+eventController.controller('eventViewController', ['$scope', '$routeParams', '$http', 'Events', function ($scope, $routeParams, $http, Events) {
+    
+    $scope.view = true;
+
+    $scope.$on('$routeChangeStart', function (event) {
+        $scope.loading = true;
+    });
+
+
+    Events.getEvent($routeParams.alias)
+        .success(function (data) {
+            //Json strings have to be changed to dates again
+            data.dateStart = new Date(data.dateStart);
+            data.dateEnd = new Date(data.dateEnd);
+            //Assign received data to corresponding object
+            $scope.event = data;
+            $scope.loading = false;
+        });
 
 	}]);
